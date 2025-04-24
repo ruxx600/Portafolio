@@ -1,0 +1,298 @@
+/* 🔹 Importar Fuente con Estilo Griego */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;700&display=swap');
+
+/* 🔹 Estilo General */
+body {
+    font-family: 'Cinzel', serif; /* Fuente principal con estilo griego */
+    background-color: #f5f5f5;
+    background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+    color: #333;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation: aparecer 0.5s ease-in forwards;
+}
+
+/* 🔹 Fondo Inspirado en Grecia */
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9)), 
+                url('https://upload.wikimedia.org/wikipedia/commons/d/de/Parthenon-2008.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* 🔹 Bordes decorativos griegos */
+.borde {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: url('https://www.transparenttextures.com/patterns/greece-key.png');
+    background-repeat: repeat-x;
+}
+.borde-superior { top: 0; }
+.borde-inferior { bottom: 0; }
+
+/* 🔹 Header con Animación */
+@keyframes deslizarDesdeArriba {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+header {
+    background-color: #1E3A8A;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    animation: deslizarDesdeArriba 0.8s ease-out;
+}
+
+/* 🔹 Footer con Animación */
+@keyframes deslizarDesdeAbajo {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+footer {
+    background-color: #1E3A8A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    animation: deslizarDesdeAbajo 0.8s ease-out;
+}
+
+/* 🔹 Para evitar que el contenido quede debajo del header y footer */
+body {
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+/* 🔹 Secciones */
+section {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Tipografía Griega */
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+p, li, a {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* 🔹 Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+section img {
+    width: 80%;
+    max-width: 600px;
+    object-fit: cover;
+}
+
+.imagen-principal {
+    width: 50%;
+    max-width: 400px;
+    border: 3px solid #1E3A8A;
+    padding: 5px;
+}
+
+/* 🔹 Navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FACC15;
+}
+
+/* 🔹 Botón de Descarga */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #1E3A8A;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #FACC15;
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* 🔹 Transición Suave al Cargar Página */
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 🔹 Animación de Cambio de Página */
+@keyframes cambioPagina {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-transition {
+    animation: cambioPagina 0.5s ease-out;
+}
+
+/* 🔹 Responsividad para Tablets */
+@media (max-width: 1024px) {
+    section { width: 95%; }
+    nav ul { text-align: center; }
+    nav ul li { display: block; margin-bottom: 10px; }
+}
+
+/* 🔹 Responsividad para Celulares */
+@media (max-width: 768px) {
+    header { padding: 15px; font-size: 16px; }
+    section { padding: 20px; width: 100%; }
+    .imagen-principal { width: 80%; max-width: 300px; }
+    nav ul li { text-align: center; margin-bottom: 8px; }
+}
+
+/* 🔹 Móviles Pequeños (Menos de 480px) */
+@media (max-width: 480px) {
+    header { font-size: 14px; }
+    nav ul li { font-size: 14px; }
+    .btn { width: 100%; padding: 10px; }
+}
+/* Estilo de los botones de redes sociales */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #1E3A8A; /* Color del fondo */
+    color: white; /* Color de los iconos */
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px; /* Tamaño del icono */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.contact-icons a:hover {
+    background-color: #FACC15; /* Color de fondo al pasar el mouse */
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+.logro {
+    margin: 20px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logro img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.logro h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.logro p {
+    margin: 5px 0 0 0;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    text-align: right;
+    padding-right: 10px;
+    color: white;
+    line-height: 20px;
+    border-radius: 10px 0 0 10px;
+    transition: width 1s ease-in-out;
+}
+
